@@ -20,7 +20,7 @@ c = "8600"
 d = "6640"
 answer = input("{}\nA.{} B.{} C.{} D.{}".format(question, a, b, c, d)).lower()
 if answer == a or answer == "a":
-    print("nice")
+    print("nice you got it correct")
     score += 20
 else:
     print("haha u got it wrong")
