@@ -1,8 +1,12 @@
+score = 0
 play=input("do you want to play my quiz")
 while play== "yes":
 
  # score 
- score = 0
+ 
+ 
+ #try
+ tries = int(input("how many attempt do you want for each question"))
  #ask users name
  name=input("what is your name").lower()
  #say hello to user and explain the quiz
@@ -12,7 +16,7 @@ while play== "yes":
  #ask user a question
  answer=input("what is 20 x 35").lower()
  #check the answer and tell user
- if answer == " 700".lower():
+ if answer == "700".lower():
     score += 5
     print("correct the answer is 700 nice job")
  else:
@@ -38,4 +42,4 @@ while play== "yes":
   
  play = input("do you want to play again")
 
- print("thanks for playing")
+print("thanks for playing")
