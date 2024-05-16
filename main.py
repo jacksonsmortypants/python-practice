@@ -1,3 +1,6 @@
+import random
+GOOD_COMMENTS = ["horray", "good job", "GREAT"]
+BAD_COMMENTS = ["bad", "try again", "get good then have another try"]
 score = 0
 play=input("do you want to play my quiz")
 while play == "yes":
@@ -28,10 +31,10 @@ while play == "yes":
       #check the answer and tell user
       if answer == "700".lower():
          score += 5
-         print("correct the answer is 700 nice job")
+         print(random.choice(GOOD_COMMENTS))
          break
       else:
-         print("silly child this isnt primary school you dummy you should know the anwer is 700")
+         print(random.choice(BAD_COMMENTS))
 
       question_attempts -=1
 
