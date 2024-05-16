@@ -17,16 +17,37 @@ while play == "yes":
       except:
          print("thats not a answer")
 
+   
    #ask users name
    name=input("what is your name").lower()
+   
+   
    #say hello to user and explain the quiz
    print("hello" ,name, "this is my quiz")
    print("this quiz is about math")
    print("dont put any spaces before your answers please")
+   
+  
    #ask user a question
    question_attempts = tries
    while question_attempts > 0:
    
+
+
+      QUESTIONS = ["what is 20 x 35", "what is 270 x 32"]
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       answer=input("what is 20 x 35").lower()
       #check the answer and tell user
       if answer == "700".lower():
@@ -38,7 +59,7 @@ while play == "yes":
 
       question_attempts -=1
 
-
+#question 2
    while question_attempts > 0:
       question = "what is 270 x 32"
       a = "8640"
