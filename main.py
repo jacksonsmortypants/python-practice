@@ -1,10 +1,22 @@
 import random
+
+Q_FORMAT = "{}\nA.{} B.{} C.{} D.{}"
 GOOD_COMMENTS = ["horray", "good job", "GREAT"]
 BAD_COMMENTS = ["bad", "try again", "get good then have another try"]
-score = 0
+QUESTIONS = ["what is 20 x 35", 
+                   "what is 270 x 32"]
+OPTIONS = [["700","670","770","600"],
+                 ["8640","6520","8600","6640"]]
+SHORT_OPTIONS = ["a","b","c","d"]
+ANSWERS = [0,0,0]
+
+
+
+
+
 play=input("do you want to play my quiz")
 while play == "yes":
-
+   score = 0
    # score 
    
    
@@ -29,58 +41,30 @@ while play == "yes":
    
   
    #ask user a question
-   question_attempts = tries
-   while question_attempts > 0:
+   answer = input(Q_FORMAT.format(QUESTIONS[0],OPTIONS[0][0],
+                                   OPTIONS[0][1], OPTIONS[0][2], OPTIONS[0][3])).lower()
    
-
-
-      QUESTIONS = ["what is 20 x 35", "what is 270 x 32"]
+   if answer == OPTIONS[0][ANSWERS[0]] or answer == SHORT_OPTIONS[ANSWERS[0]].lower():
+      print("yippie")
+   elif answer in SHORT_OPTIONS or answer in OPTIONS[0]:
+      print("wrong")
+      print(random.choice(BAD_COMMENTS))
+   else:
+      print("that wasnt an option")
+   
+   
+   
+   question_attempts = tries
+   while question_attempts > 0:   
+       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      answer=input("what is 20 x 35").lower()
-      #check the answer and tell user
-      if answer == "700".lower():
-         score += 5
-         print(random.choice(GOOD_COMMENTS))
-         break
-      else:
-         print(random.choice(BAD_COMMENTS))
-
-      question_attempts -=1
-
-#question 2
-   while question_attempts > 0:
-      question = "what is 270 x 32"
-      a = "8640"
-      b = "6520"
-      c = "8600"
-      d = "6640"
-      answer = input("{}\nA.{} B.{} C.{} D.{}".format(question, a, b, c, d)).lower()
-      if answer == a or answer == "a":
-         print("nice you got it correct")
-         score += 20
-         break
-      elif answer == "":
-         print("that is not an answer")
-      elif answer != a and answer != "a" and answer != b and answer != "b" and answer != c and answer != "c" and answer != d and answer !="d":
-         print("that is not an answer")
-      else:
-         print("haha u got it wrong silly billy")
-      question_attempts -= 1
+   
    #end
-   print("this is the end thanks for playing {}." .format(name))
+      print("this is the end thanks for playing {}." .format(name))
+      break
    print("your final score is", score)
    
    play = input("do you want to play again")
    print("thanks for playing")
+   
+  
