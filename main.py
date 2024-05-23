@@ -39,26 +39,28 @@ while play == "yes":
    print("this quiz is about math")
    print("dont put any spaces before your answers please")
    
-  
-   #ask user a question
-   answer = input(Q_FORMAT.format(QUESTIONS[0],OPTIONS[0][0],
-                                   OPTIONS[0][1], OPTIONS[0][2], OPTIONS[0][3])).lower()
-   
-   if answer == OPTIONS[0][ANSWERS[0]] or answer == SHORT_OPTIONS[ANSWERS[0]].lower():
-      print("yippie")
-   elif answer in SHORT_OPTIONS or answer in OPTIONS[0]:
-      print("wrong")
-      print(random.choice(BAD_COMMENTS))
-   else:
-      print("that wasnt an option")
-   
-   
-   
-   question_attempts = tries
-   while question_attempts > 0:   
-       
+   for i in range(len(QUESTIONS)):
+      question_attempts = tries
+      while question_attempts > 0:   
+         #ask user a question
+         answer = input(Q_FORMAT.format(QUESTIONS[i],OPTIONS[i][0],
+                                       OPTIONS[i][1], OPTIONS[i][2], OPTIONS[i][3])).lower()
+         #check answer
+         if answer == OPTIONS[i][ANSWERS[i]] or answer == SHORT_OPTIONS[ANSWERS[i]]:
+            print("yippie")
+            score += 5
+            print(random.choice(GOOD_COMMENTS))
+            break
+         elif answer == "":
+            print("that aint an answer")
+         elif answer in SHORT_OPTIONS or answer in OPTIONS[0]:
+            print("wrong")
+            print(random.choice(BAD_COMMENTS))
+         else:
+            print("that wasnt an option")
+         question_attempts -= 1 
+         
       
-   
    #end
       print("this is the end thanks for playing {}." .format(name))
       break
