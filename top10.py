@@ -2,7 +2,6 @@ import random
 
 score = 0
 MAX_TURNS = 10
-#---------functions----------
 
 #welcome to quiz
 def intro():
@@ -11,7 +10,7 @@ def intro():
 
     #hello user
     print("welcome to my quiz,",name)
-    print("this quiz is about the top ten  have fun ;)")\
+    print("this quiz is about the top ten most streamed songs have fun ;)")
     
 def getpassword():
     while True:
@@ -38,9 +37,14 @@ def getlives():
                 print("a positive number please")
         except:
             print("that is not a number")
-#---------main code----------
+            
+#---------functions----------
+def addfive(number):
+    return number + 5
 
+#---------main code----------
+num = addfive(14)
 intro()
 lives = getlives()
 tries = getnumber()
-BN_ANSWERS = []
+SS_ANSWERS = []
