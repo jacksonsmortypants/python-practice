@@ -1,4 +1,5 @@
-import random
+guesses = []
+SS_ANSWERS = ["blinding lights","shape","someone you loved","sunflower","starboy","as it was","one dance","stay","dance monkey","beliver"]
 
 score = 0
 MAX_TURNS = 10
@@ -11,20 +12,6 @@ def intro():
     #hello user
     print("welcome to my quiz,",name)
     print("this quiz is about the top ten most streamed songs have fun ;)")
-    
-def getpassword():
-    while True:
-        password = input("what is the password")
-        if password == "hehe":
-            return
-        else:
-            print("wrong answer try again")
-def getnumber():
-    number = input("give me number")
-    return int(number)
-
-number = getnumber()
-print(number)
 
 def getlives():
     while True:
@@ -37,14 +24,33 @@ def getlives():
                 print("a positive number please")
         except:
             print("that is not a number")
+
+def inlist(answer, list):
+    if answer in list:
+        return True
+    else:
+        return False
             
-#---------functions----------
-def addfive(number):
-    return number + 5
 
 #---------main code----------
-num = addfive(14)
 intro()
 lives = getlives()
-tries = getnumber()
-SS_ANSWERS = []
+
+while lives > 0:
+    answer = input("name one of the top ten most streamed songs on spotify:\n").lower()
+#correct or wrong
+    if inlist(answer, SS_ANSWERS):
+        if inlist(answer, guesses):
+            print("you have got that already")
+        else:
+            print("correct")
+            lives += 5
+            guesses.append(answer)
+            print("you have guessed{}. your score is {}. you have {} chances remaining". format(len(guesses),))
+    else:
+        print("wrong")
+        lives -= 1
+        print("you have guessed{}. your score is {}. you have {} chances remaining". format(len(guesses),))
+
+
+print("game over nice")     
