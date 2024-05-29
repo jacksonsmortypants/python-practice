@@ -44,13 +44,17 @@ while lives > 0:
             print("you have got that already")
         else:
             print("correct")
-            lives += 5
+            score += 5
             guesses.append(answer)
-            print("you have guessed{}. your score is {}. you have {} chances remaining". format(len(guesses),))
+            print("you have guessed{}. your score is {}. you have {} chances remaining". format(len(guesses),score,lives))
     else:
         print("wrong")
         lives -= 1
-        print("you have guessed{}. your score is {}. you have {} chances remaining". format(len(guesses),))
+        print("you have guessed{}. your score is {}. you have {} chances remaining". format(len(guesses),score,lives))
+    if score == 50:
+        print("well done")
+        break
+
 
 
 print("game over nice")     
